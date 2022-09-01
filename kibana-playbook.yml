@@ -1,0 +1,11 @@
+---
+- hosts: kibana 
+  become: true
+  vars:
+    - elastic_hostname: "{{ groups['elastic'][0] }}"
+  vars_files:
+    - vars/vault.yml
+  roles:
+    - kibana
+  tags:
+    - kibana

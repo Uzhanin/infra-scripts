@@ -1,0 +1,9 @@
+---
+- hosts: elastic
+  become: true
+  vars_files:
+    - vars/vault.yml
+  roles:
+    - elasticsearch
+  tags:
+    - elastic

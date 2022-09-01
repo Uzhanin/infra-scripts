@@ -1,0 +1,31 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Install epel-release and update-cache
+      yum:
+        name: epel-release
+        state: present
+        update_cache: true
+
+    - name: Install docker python
+      pip:
+        name: docker
+        state: present
+
+    - name: Install packages
+      yum:
+        name:
+          - docker
+          - python3
+        state: present
+        
+    - name: Ensure docker is started and enabled on startup
+      service:
+        name: docker
+        state: started
+        enabled: true
+  
+  tags:
+    - pretask
