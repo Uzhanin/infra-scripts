@@ -1,0 +1,9 @@
+---
+- name: elasticsearch
+  src: https://github.com/Uzhanin/ansible-elasticsearch.git
+
+- name: kibana
+  src: https://github.com/Uzhanin/ansible-kibana.git
+
+- name: logstash
+  src: https://github.com/Uzhanin/ansible-logstash.git
